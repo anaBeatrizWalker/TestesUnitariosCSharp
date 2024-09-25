@@ -37,4 +37,18 @@ public class CalculadoraTestes
         //Assert
         Assert.True(resultado);
     }
+
+    [Theory] //conjunto de cenários que vão passar pelo mesmo teste
+    [InlineData(2)] //cada inline data é um teste diferente que passa um parâmetro para o teste
+    [InlineData(4)]
+    [InlineData(6)]
+    [InlineData(8)]
+    public void DeveVerificarSeOsNumerosSaoParesERetornarVerdadeiro(int numero)
+    {
+        //Act
+        bool resultado = _calc.EhPar(numero);
+
+        //Assert
+        Assert.True(resultado);
+    }
 }
